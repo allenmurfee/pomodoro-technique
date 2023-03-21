@@ -37,7 +37,9 @@ function Pomodoro() {
   };
 
   const takeBreak = () => {
-
+    setIsActive(true);
+    setIsBreak(!isBreak)
+    setTime(300);
   }
 
   return (
@@ -48,7 +50,7 @@ function Pomodoro() {
         .padStart(2, "0")}`}</h2>
       <button onClick={toggleTimer}>{isActive ? "Pause" : "Start"}</button>
       <button onClick={resetTimer}>Reset</button>
-      <button onclick={takeBreak}>Break</button>
+      <button onClick={takeBreak}>{isBreak ? "Work" : "Break"}</button>
     </div>
   );
 }
