@@ -4,7 +4,7 @@ function Header() {
  
   return (
     <div>
-      <h1>Pomodoro Timer</h1>
+      <h1 className="header">Pomodoro Timer</h1>
     </div>
   );
 }

@@ -38,21 +38,22 @@ function Pomodoro() {
 
   const takeBreak = () => {
     if (isBreak === true) {
-       setIsBreak(false)
-       setTime(1500)
+      setIsBreak(false);
+      setTime(1500);
     } else {
-       setIsBreak(true)
-       setTime(300)
+      setIsBreak(true);
+      setTime(300);
     }
-    
   };
 
   return (
     <div>
       <h2>{isBreak ? "Break Time!" : "Start Your Focus Session!"}</h2>
-      <h2>{`${minutes.toString().padStart(2, "0")}:${seconds
-        .toString()
-        .padStart(2, "0")}`}</h2>
+      <div className="clock-container">
+        <h2 className ="clock">{`${minutes.toString().padStart(2, "0")}:${seconds
+          .toString()
+          .padStart(2, "0")}`}</h2>
+      </div>
       <button onClick={toggleTimer}>{isActive ? "Pause" : "Start"}</button>
       <button onClick={resetTimer}>Reset</button>
       <button onClick={takeBreak}>{isBreak ? "Work" : "Break"}</button>

@@ -2,9 +2,57 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  font-size: 3em; /* adjust the value to make the heading bigger or smaller */
+  color: green;
+}
+
+.timer {
+  font-size: 24px;
+  text-align: center;
+  background-color: #f5f5f5;
+  color: #000000;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #cccccc;
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  box-shadow: 2px 2px 5px #cccccc;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.clock::before {
+  content: "";
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 5px #cccccc;
 }
 
 @media (prefers-reduced-motion: no-preference) {
