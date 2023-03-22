@@ -12,13 +12,13 @@ function Pomodoro() {
       interval = setInterval(() => {
         setTime((time) => time - 1);
       }, 1000);
-    } 
+    }
     if (time === 0) {
-        clearInterval(interval);
-        setIsActive(true);
-        setIsBreak(!isBreak);
-        setTime(isBreak ? 1500 : 300); // 5 minutes for break, 25 minutes for work
-      }
+      clearInterval(interval);
+      setIsActive(true);
+      setIsBreak(!isBreak);
+      setTime(isBreak ? 1500 : 300); // 5 minutes for break, 25 minutes for work
+    }
 
     return () => clearInterval(interval);
   }, [isActive, time, isBreak]);
@@ -33,18 +33,23 @@ function Pomodoro() {
   const resetTimer = () => {
     setIsActive(false);
     setTime(1500);
-    setIsBreak(false)
+    setIsBreak(false);
   };
 
   const takeBreak = () => {
-    setIsActive(true);
-    setIsBreak(!isBreak)
-    setTime(300);
-  }
+    if (isBreak === true) {
+       setIsBreak(false)
+       setTime(1500)
+    } else {
+       setIsBreak(true)
+       setTime(300)
+    }
+    
+  };
 
   return (
     <div>
-      <h2>{isBreak ? "Take a Break!" : "Time to Work!"}</h2>
+      <h2>{isBreak ? "Break Time!" : "Start Your Focus Session!"}</h2>
       <h2>{`${minutes.toString().padStart(2, "0")}:${seconds
         .toString()
         .padStart(2, "0")}`}</h2>
