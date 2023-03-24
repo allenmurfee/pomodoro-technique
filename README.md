@@ -17,10 +17,10 @@
   So, put your phone down, open this app, and enjoy some productivity! 
 
   ## Screenshot
-  Coming soon
+ ![pomodoro screenshot](./public/screenshot.png)
 
   ## Deployed Link
-  Coming soon
+  This app is live here: https://allenmurfee.github.io/pomodoro-technique/ 
   
   ## Technologies Used
   ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)</br>
